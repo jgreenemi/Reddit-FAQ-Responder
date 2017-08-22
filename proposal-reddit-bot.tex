@@ -1,0 +1,82 @@
+\documentclass[dvips,12pt]{article}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\begin{document}
+
+\title{Proposal for a Reddit FAQ Responder Bot Application}
+\author{Joseph Greene (reddit user /u/ClydeMachine)}
+\date{\today}
+
+\maketitle
+
+\section{Problem Statement}
+
+This proposal is for creating an automated system of responding to Reddit user's Frequently Asked Questions. 
+
+The project is not necessarily created out of a dire need or previous request of any subreddit for solving this problem. Rather, for learning.
+
+\section{In Scope}
+
+
+\begin{itemize}
+\item Create an automated Reddit account that watched a specific subreddit for new self-text posts.
+\item Extract, normalize and process the post content to determine if the question is likely or unlikely to be a Frequently Asked Question.
+\item Create logic to respond to each post predicted to be an FAQ, with content and/or links to the subreddit Wiki to answer the poster's question. The content to be posted can include an overview of the information contained in the Wiki, such that it would apply in any question's case (that is, it would not post just the information for just a single specific question).
+\end{itemize}
+
+\section{Out of Scope}
+
+\begin{itemize}
+\item Answering questions directly. While we could do this, the answers to FAQs should be provided in the form of Wiki links/Wiki content. This will simplify the initial build of the application as we need only do binary classification of whether or not a post is an FAQ or not, rather than which of the FAQs it is asking. This can be done as a stretch goal, as post-launch feature development.
+\item Flagging or otherwise marking posts as being FAQs after answering them. This would require that every subreddit have post flair set up prior to launching the bot, and would require that the bot have moderator permissions on its Reddit account. This is not necessary for the base build of the application.
+\end{itemize}
+
+\section{Assumptions}
+
+\begin{itemize}
+\item We assume that the subreddits for which the bot will be used will have a sufficient number of variations for each FAQ for training against.
+\item It is also assumed that every subreddit to use the bot has sufficient Wiki content to answer the poster's question. Otherwise the bot will not provide value to the users of the subreddit.
+\end{itemize}
+
+\section{Measures of Success}
+
+.
+
+\section{Use Cases}
+
+.
+
+\section{Risks and Failure Cases}
+
+.
+
+\section{Open Issues}
+
+.
+
+\section{Stakeholders}
+
+.
+
+% Where URLs are necessary format them as such: \url{https://com}
+% Citations: \cite{name1990}
+% Figures can be referenced as ~\ref{reflabel}
+
+% \begin{figure}
+% \begin{center}
+% \resizebox{6in}{!}{\includegraphics*{imagename.jpg}}
+% \end{center}
+
+% \caption{Here's a figure caption. Also include the label
+% at the end. \label{m42}}
+
+% \end{figure}
+
+\end{document}
