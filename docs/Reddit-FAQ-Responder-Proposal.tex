@@ -1,29 +1,41 @@
-\documentclass[dvips,12pt]{article}
+\documentclass[dvips,11pt]{article}
 
+\usepackage[parfill]{parskip}
 \usepackage[pdftex]{graphicx}
 \usepackage{url}
 
-\setlength{\oddsidemargin}{0.25in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{0in}
-\setlength{\textheight}{8.5in}
+% \setlength{\oddsidemargin}{0.25in}
+% \setlength{\textwidth}{6.5in}
+% \setlength{\topmargin}{0in}
+% \setlength{\textheight}{8.5in}
 
 \begin{document}
 
 \title{Proposal for a Reddit FAQ Responder Bot Application}
-\author{Joseph Greene (reddit user /u/ClydeMachine)}
+\author{
+Greene, Joseph \\
+\texttt{jgreenemi@gmail.com}
+}
 \date{\today}
 
 \maketitle
 
 \section{Problem Statement}
 
-This proposal is for creating an automated system of responding to Reddit user's Frequently Asked Questions. 
+This proposal is for creating an automated system of responding to Reddit user's Frequently Asked Questions. At present, large subreddits that see several thousand users a day will invariably encounter a large number of postings that are readily explained through either previous posts or through the subreddit's Wiki page resources. In an effort to educate the users who make these posts, often times a moderator or regular subreddit user will need to go out of their way to provide the answer to their question as a comment on such posts, thereby reducing the effectiveness of having an FAQ Wiki in the first place. Although having such a Wiki can simplify the process of answering such questions, the process still involves human effort to complete.
 
-The project is not necessarily created out of a dire need or previous request of any subreddit for solving this problem. Rather, for learning.
+The aim of this project is to automate this process with a Reddit bot application. Where a human normally identifies a post with a common question by reading through the post, then typing a comment in response to deliver a suitable answer, a bot can detect the nature of the post and respond with an informative comment to answer the question being asked. The bot can be trained on a subreddit's post history using a convolutional neural network (abbreviated as "CNN") on the normalized text from each post to assign a prediction score, telling of the likelihood that the poster is asking a common question. The bot will leverage the Reddit API for reading text posts from a specific subreddit, as well as making comments to posts as appropriate.
+
+The project is not necessarily created out of a dire need or previous request from the leadership of any subreddit for solving this problem. Rather, this project seeks to create a useful software , while providing its builders an opportunity to learn how an application can leverage the benefits of CNNs.
+
+\section{Measures of Success}
+
+\begin{itemize}
+\item The number of posts that the bot correctly identifies as FAQs versus those posts that the bot incorrectly marks as such. The goal is a 75\% accuracy in identifying posts correctly.
+\item The number of responses that the bot submits for the FAQ posts that are considered a valuable response, measured by the upvote
+\end{itemize}
 
 \section{In Scope}
-
 
 \begin{itemize}
 \item Create an automated Reddit account that watched a specific subreddit for new self-text posts.
@@ -40,14 +52,9 @@ The project is not necessarily created out of a dire need or previous request of
 
 \section{Assumptions}
 
-\begin{itemize}
-\item We assume that the subreddits for which the bot will be used will have a sufficient number of variations for each FAQ for training against.
-\item It is also assumed that every subreddit to use the bot has sufficient Wiki content to answer the poster's question. Otherwise the bot will not provide value to the users of the subreddit.
-\end{itemize}
+It is assumed that the subreddits for which the bot will be used will have a sufficient number of variations for each FAQ for training against. Subreddits that have too few samples for FAQ posts versus regular ones will likely produce an unreliable algorithm, and will ultimately take the wrong action on posts, such as responding to a post that doesn't pose a common question. 
 
-\section{Measures of Success}
-
-.
+It is also assumed that every subreddit to use the bot has sufficient Wiki content to answer the poster's question. Otherwise the bot will not provide value to the users of the subreddit.
 
 \section{Use Cases}
 
