@@ -10,8 +10,8 @@
 % \setlength{\textheight}{8.5in}
 
 \begin{document}
+\title{\line(1,0){350}\\Proposal for a Reddit FAQ Responder Bot Application\\\line(1,0){350}}
 
-\title{Proposal for a Reddit FAQ Responder Bot Application}
 \author{
 Greene, Joseph \\
 \texttt{jgreenemi@gmail.com}
@@ -20,13 +20,14 @@ Greene, Joseph \\
 
 \maketitle
 
+
 \section{Problem Statement}
 
 This proposal is for creating an automated system of responding to Reddit user's Frequently Asked Questions. At present, large subreddits that see several thousand users a day will invariably encounter a large number of postings that are readily explained through either previous posts or through the subreddit's Wiki page resources. In an effort to educate the users who make these posts, often times a moderator or regular subreddit user will need to go out of their way to provide the answer to their question as a comment on such posts, thereby reducing the effectiveness of having an FAQ Wiki in the first place. Although having such a Wiki can simplify the process of answering such questions, the process still involves human effort to complete.
 
 The aim of this project is to automate this process with a Reddit bot application. Where a human normally identifies a post with a common question by reading through the post, then typing a comment in response to deliver a suitable answer, a bot can detect the nature of the post and respond with an informative comment to answer the question being asked. The bot can be trained on a subreddit's post history using a convolutional neural network (abbreviated as "CNN") on the normalized text from each post to assign a prediction score, telling of the likelihood that the poster is asking a common question. The bot will leverage the Reddit API for reading text posts from a specific subreddit, as well as making comments to posts as appropriate.
 
-The project is not necessarily created out of a dire need or previous request from the leadership of any subreddit for solving this problem. Rather, this project seeks to create a useful software , while providing its builders an opportunity to learn how an application can leverage the benefits of CNNs.
+The project is not necessarily created out of a dire need or previous request from the leadership of any subreddit for solving this problem. Rather, this project seeks to create an application that provides direct benefit to the users of a subreddit - be they the askers of questions or those who would otherwise be answering them - while providing its builders an opportunity to learn how an application can leverage the benefits of machine learning.
 
 \section{Measures of Success}
 
